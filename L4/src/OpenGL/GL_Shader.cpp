@@ -116,6 +116,26 @@ namespace OpenGL
 		glUniform1f(location, value);
 	}
 
+    void Shader::setUniform2f(const std::string& name, const glm::vec2& value)
+    {
+        int32_t location = getUniformLocation(name);
+        if (location == -1) {
+            std::cout << "[ERROR][SHADER] Couldn't find uniform: " << name << std::endl;
+            return;
+        }
+        glUniform2f(location, value.x, value.y);
+    }
+
+	void Shader::setUniform3f(const std::string& name, const glm::vec3& value)
+	{
+        int32_t location = getUniformLocation(name);
+        if (location == -1) {
+            std::cout << "[ERROR][SHADER] Couldn't find uniform: " << name << std::endl;
+            return;
+        }
+        glUniform3f(location, value.x, value.y, value.z);
+	}
+
 	void Shader::bind() const
 	{
 		glUseProgram(m_id);

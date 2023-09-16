@@ -50,6 +50,8 @@ public:
 
     L4_API void setVSync(const bool& value);
 
+    L4_API void setCursorCapture(const bool& value);
+
     L4_API bool isRunning() const;
 
     L4_API void swapBuffers();

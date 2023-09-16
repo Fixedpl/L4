@@ -62,6 +62,7 @@ namespace OpenGL
         L4_API void bind() const;
 
         L4_API void create(const uint32_t& size, const DrawType& draw_type) const;
+        L4_API void create(void* data, const uint32_t& size, const DrawType& draw_type) const;
 
         L4_API void update(void* data, const uint32_t& size, const uint32_t& offset);
 

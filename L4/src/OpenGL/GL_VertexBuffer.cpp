@@ -75,6 +75,13 @@ namespace OpenGL
 		glBufferData(GL_ARRAY_BUFFER, size, nullptr, static_cast<GLenum>(draw_type));
 	}
 
+    void VertexBuffer::create(void* data, const uint32_t& size, const DrawType& draw_type) const
+    {
+        bind();
+
+        glBufferData(GL_ARRAY_BUFFER, size, data, static_cast<GLenum>(draw_type));
+    }
+
 	void VertexBuffer::update(void* data, const uint32_t& size, const uint32_t& offset)
 	{
 		glBufferSubData(GL_ARRAY_BUFFER, offset, size, data);

@@ -24,6 +24,8 @@ namespace OpenGL
 		L4_API void setUniformMat4f(const std::string& name, const glm::mat4& matrix);
 		L4_API void setUniform1i(const std::string& name, const int32_t& value);
 		L4_API void setUniform1f(const std::string& name, const float& value);
+        L4_API void setUniform2f(const std::string& name, const glm::vec2& value);
+        L4_API void setUniform3f(const std::string& name, const glm::vec3& value);
 
         L4_API void bind() const;
 

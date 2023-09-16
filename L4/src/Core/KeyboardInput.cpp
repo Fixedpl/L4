@@ -28,7 +28,7 @@ void KeyboardInput::KeyboardCallback(const int32_t& key, const int32_t& action)
     if (action == GLFW_PRESS) {
         m_key_states[key] = true;
     }
-    else {
+    else if (action == GLFW_RELEASE) {
         m_key_states[key] = false;
     }
 

@@ -30,6 +30,7 @@ namespace OpenGL
 
 	void Renderer::drawArrays(const VertexArray& buffer, const DrawUsage& draw_usage, const uint32_t& vertice_count)
 	{
+        buffer.bind();
 		glDrawArrays(static_cast<GLenum>(draw_usage), 0, vertice_count);
 	}
 
@@ -38,6 +39,7 @@ namespace OpenGL
 		if (size == 0) {
 			size = buffer.getIndexBuffer().getIndiceCount();
 		}
+        buffer.bind();
 		glDrawElements(static_cast<GLenum>(draw_usage), size, GL_UNSIGNED_INT, (void*)0);
 	}
 }

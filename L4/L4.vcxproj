@@ -99,7 +99,7 @@
       <PreprocessorDefinitions>LIBRARY_EXPORTS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\Tests;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,7 +130,7 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
       <PreprocessorDefinitions>LIBRARY_EXPORTS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\Tests;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -160,7 +160,7 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>LIBRARY_EXPORTS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\Tests;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -192,7 +192,7 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
       <PreprocessorDefinitions>LIBRARY_EXPORTS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\Tests;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -217,6 +217,8 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Core\Controller3D.cpp" />
+    <ClCompile Include="src\Core\Mouse3DController.cpp" />
     <ClCompile Include="src\Core\ImGuiApplication.cpp" />
     <ClCompile Include="src\Core\BasicApplication.cpp" />
     <ClCompile Include="src\Core\Application.cpp" />
@@ -237,8 +239,11 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
     <ClCompile Include="src\vendor\imgui\imgui_tables.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\vendor\stb_image\stb_image.cpp" />
+    <ClCompile Include="src\Tests\TestingEnvironment.cpp" />
+    <ClCompile Include="src\Tests\Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Core\Controller3D.h" />
     <ClInclude Include="include\Core\ImGuiApplication.h" />
     <ClInclude Include="include\Core\BasicApplication.h" />
     <ClInclude Include="include\Core\Application.h" />
@@ -266,6 +271,7 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
     <ClInclude Include="include\vendor\imgui\imstb_textedit.h" />
     <ClInclude Include="include\vendor\imgui\imstb_truetype.h" />
     <ClInclude Include="include\vendor\stb_image\stb_image.h" />
+    <ClInclude Include="include\Core\Mouse3DController.h" />
     <ClInclude Include="src\OpenGL\GL_Context.h" />
     <ClInclude Include="src\OpenGL\GL_DrawTypeEnum.h" />
     <ClInclude Include="src\OpenGL\GL_gl.h" />
@@ -275,6 +281,11 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
     <ClInclude Include="src\OpenGL\GL_Texture.h" />
     <ClInclude Include="src\OpenGL\GL_TextureSlots.h" />
     <ClInclude Include="src\OpenGL\GL_VertexBuffer.h" />
+    <ClInclude Include="include\Tests\TestingEnvironment.h" />
+    <ClInclude Include="include\Tests\Test.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

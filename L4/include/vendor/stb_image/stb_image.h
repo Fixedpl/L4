@@ -368,6 +368,12 @@ extern "C" {
 #define STBIDEF extern
 #endif
 #endif
+#ifdef LIBRARY_EXPORTS
+#    define STBIDEF extern __declspec(dllexport)
+#else
+#    define STBIDEF extern __declspec(dllimport)
+#endif
+
 
     //////////////////////////////////////////////////////////////////////////////
     //

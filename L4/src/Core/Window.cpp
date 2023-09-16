@@ -89,6 +89,12 @@ void Window::setVSync(const bool& value)
 		glfwSwapInterval(0);
 }
 
+void Window::setCursorCapture(const bool& value)
+{
+    int glfw_cursor_focused = value ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL;
+    glfwSetInputMode(m_window, GLFW_CURSOR, glfw_cursor_focused);
+}
+
 bool Window::isRunning() const
 {
 	return !glfwWindowShouldClose(m_window);

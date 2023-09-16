@@ -32,12 +32,12 @@ m_cursor_pos(0.0f)
 
 bool MouseInput::isLeftButtonPressed()
 {
-	return m_button_states[1];
+	return m_button_states[0];
 }
 
 bool MouseInput::isRightButtonPressed()
 {
-	return m_button_states[2];
+	return m_button_states[1];
 }
 
 const glm::vec2& MouseInput::getLastCursorPosition() const

@@ -17,9 +17,7 @@ namespace OpenGL
 	{
 		glGenBuffers(1, &m_id);
 
-		bind();
-
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(uint32_t), indices, GL_DYNAMIC_DRAW);
+        create(indices, count);
 	}
 
 	IndexBuffer::~IndexBuffer()
