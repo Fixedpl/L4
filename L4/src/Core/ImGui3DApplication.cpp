@@ -1,10 +1,10 @@
-#include "ImGuiApplication.h"
+#include "ImGui3DApplication.h"
 
 #include "OpenGL/GL_Context.h"
 #include "OpenGL/GL_Renderer.h"
 
 
-ImGuiApplication::ImGuiApplication(const WindowSettings& window_settings)
+ImGui3DApplication::ImGui3DApplication(const WindowSettings& window_settings)
     :
     Application(window_settings)
 {
@@ -14,15 +14,17 @@ ImGuiApplication::ImGuiApplication(const WindowSettings& window_settings)
     OpenGL::Renderer::init();
     OpenGL::Renderer::setClearColor(glm::vec4(0.6f, 0.4f, 0.3f, 1.0f));
 
+    m_controller3D = new Controller3D(m_window);
+
     imGuiInit();
 }
 
-void ImGuiApplication::run()
+void ImGui3DApplication::run()
 {
     loop();
 }
 
-void ImGuiApplication::loop()
+void ImGui3DApplication::loop()
 {
     float current_time = static_cast<float>(glfwGetTime());
 
@@ -35,6 +37,8 @@ void ImGuiApplication::loop()
         float new_time = static_cast<float>(glfwGetTime());
         float frame_time = new_time - current_time;
         current_time = new_time;
+
+        m_controller3D->handleCamera(frame_time);
 
         onUpdate(frame_time);
         onImGuiUpdate();
@@ -49,7 +53,7 @@ void ImGuiApplication::loop()
     m_window.shutdown();
 }
 
-void ImGuiApplication::imGuiInit()
+void ImGui3DApplication::imGuiInit()
 {
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -65,20 +69,20 @@ void ImGuiApplication::imGuiInit()
     ImGui_ImplOpenGL3_Init(glsl_version.c_str());
 }
 
-void ImGuiApplication::imGuiNewFrame()
+void ImGui3DApplication::imGuiNewFrame()
 {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 }
 
-void ImGuiApplication::imGuiRender()
+void ImGui3DApplication::imGuiRender()
 {
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
-void ImGuiApplication::imGuiShutdown()
+void ImGui3DApplication::imGuiShutdown()
 {
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();

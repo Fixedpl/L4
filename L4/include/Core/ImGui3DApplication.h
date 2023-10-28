@@ -1,18 +1,18 @@
 #pragma once
-
 #include "Application.h"
 #include "dll.h"
+#include "Controller3D.h"
 
 #include <imgui/imgui.h>
 #include <imgui/imgui_impl_opengl3.h>
 #include <imgui/imgui_impl_glfw.h>
 
 
-class ImGuiApplication : public Application
+class ImGui3DApplication : public Application
 {
 public:
 
-    L4_API ImGuiApplication(const WindowSettings& window_settings);
+    L4_API ImGui3DApplication(const WindowSettings& window_settings);
 
     L4_API void run() override;
 
@@ -30,6 +30,10 @@ private:
     void imGuiNewFrame();
     void imGuiRender();
     void imGuiShutdown();
+
+private:
+
+    Controller3D* m_controller3D;
 
 };
 
