@@ -99,7 +99,7 @@
       <PreprocessorDefinitions>LIBRARY_EXPORTS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\Tests;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\Test;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,7 +130,7 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
       <PreprocessorDefinitions>LIBRARY_EXPORTS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\Tests;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\Test;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -160,7 +160,7 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>LIBRARY_EXPORTS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\Tests;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\Test;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -192,7 +192,7 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
       <PreprocessorDefinitions>LIBRARY_EXPORTS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\Tests;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\Test;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -217,6 +217,8 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Core\ImGui3DApplication.cpp" />
+    <ClCompile Include="src\Core\Basic3DApplication.cpp" />
     <ClCompile Include="src\Core\Controller3D.cpp" />
     <ClCompile Include="src\Core\Mouse3DController.cpp" />
     <ClCompile Include="src\Core\ImGuiApplication.cpp" />
@@ -239,10 +241,12 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
     <ClCompile Include="src\vendor\imgui\imgui_tables.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\vendor\stb_image\stb_image.cpp" />
-    <ClCompile Include="src\Tests\TestingEnvironment.cpp" />
-    <ClCompile Include="src\Tests\Test.cpp" />
+    <ClCompile Include="src\Test\TestingEnvironment.cpp" />
+    <ClCompile Include="src\Test\Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Core\ImGui3DApplication.h" />
+    <ClInclude Include="include\Core\Basic3DApplication.h" />
     <ClInclude Include="include\Core\Controller3D.h" />
     <ClInclude Include="include\Core\ImGuiApplication.h" />
     <ClInclude Include="include\Core\BasicApplication.h" />
@@ -281,8 +285,8 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
     <ClInclude Include="src\OpenGL\GL_Texture.h" />
     <ClInclude Include="src\OpenGL\GL_TextureSlots.h" />
     <ClInclude Include="src\OpenGL\GL_VertexBuffer.h" />
-    <ClInclude Include="include\Tests\TestingEnvironment.h" />
-    <ClInclude Include="include\Tests\Test.h" />
+    <ClInclude Include="include\Test\TestingEnvironment.h" />
+    <ClInclude Include="include\Test\Test.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

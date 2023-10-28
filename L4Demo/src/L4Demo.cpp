@@ -1,28 +1,11 @@
 ﻿#include <iostream>
 
-#include "Core/Basic3DApplication.h"
+#include "Tests/ImGui3DAppTest.h"
 
-
-class TestApp : public Basic3DApplication
-{
-public:
-
-    TestApp(const WindowSettings& window_settings)
-    :
-        Basic3DApplication(window_settings)
-    {
-
-    }
-
-    void onUpdate(const float& dt) {
-
-    }
-
-};
 
 int main()
 {
-    TestApp app = TestApp(WindowSettings());
+    ImGui3DAppTest app = ImGui3DAppTest(WindowSettings());
     app.run();
 }
 

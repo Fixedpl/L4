@@ -2,7 +2,7 @@
 #include <unordered_map>
 
 #include "Core/ImGuiApplication.h"
-#include "Tests/Test.h"
+#include "Test/Test.h"
 
 class TestingEnvironment : public ImGuiApplication
 {
