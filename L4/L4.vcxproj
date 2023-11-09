@@ -99,7 +99,8 @@
       <PreprocessorDefinitions>LIBRARY_EXPORTS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\Test;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\Entity;$(ProjectDir)include\Test;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,7 +131,8 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
       <PreprocessorDefinitions>LIBRARY_EXPORTS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\Test;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\Entity;$(ProjectDir)include\Test;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -160,8 +162,9 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>LIBRARY_EXPORTS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\Test;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\Entity;$(ProjectDir)include\Test;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -192,7 +195,8 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
       <PreprocessorDefinitions>LIBRARY_EXPORTS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\Test;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\Entity;$(ProjectDir)include\Test;$(ProjectDir)include\Core;$(ProjectDir)include\vendor\imgui;$(ProjectDir)include\vendor\stb_image;$(ProjectDir)include\vendor;$(ProjectDir)deps\GLEW\include;$(ProjectDir)deps\GLFW\include;$(ProjectDir)include;$(ProjectDir)include\OpenGL;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -217,6 +221,8 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Entity\EntityRegistry.cpp" />
+    <ClCompile Include="src\Entity\Entity.cpp" />
     <ClCompile Include="src\Core\ImGui3DApplication.cpp" />
     <ClCompile Include="src\Core\Basic3DApplication.cpp" />
     <ClCompile Include="src\Core\Controller3D.cpp" />
@@ -245,6 +251,8 @@ rmdir /s /q "$(SolutionDir)L4_lib\include\vendor"</Command>
     <ClCompile Include="src\Test\Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Entity\EntityRegistry.h" />
+    <ClInclude Include="include\Entity\Entity.h" />
     <ClInclude Include="include\Core\ImGui3DApplication.h" />
     <ClInclude Include="include\Core\Basic3DApplication.h" />
     <ClInclude Include="include\Core\Controller3D.h" />

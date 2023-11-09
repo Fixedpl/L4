@@ -32,7 +32,7 @@ namespace OpenGL
 
 	private:
 
-		void _addAttribute(const uint32_t& vertex_dim, const uint32_t& data_type);
+        L4_API void _addAttribute(const uint32_t& vertex_dim, const uint32_t& data_type);
 
 	private:
 
