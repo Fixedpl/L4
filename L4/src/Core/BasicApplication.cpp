@@ -9,7 +9,7 @@ BasicApplication::BasicApplication(const WindowSettings& window_settings)
 {
     m_window.create();
 
-    OpenGL::Context::create();
+    OpenGL::Context::create(window_settings.opengl_debug);
     OpenGL::Renderer::init();
     OpenGL::Renderer::setClearColor(glm::vec4(0.6f, 0.4f, 0.3f, 1.0f));
 }

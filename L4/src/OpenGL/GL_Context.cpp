@@ -13,13 +13,16 @@ namespace OpenGL
 		std::cout << id << " " << type << " " << severity << " " << source << " " << msg << std::endl;
 	}
 
-	void Context::create()
+	void Context::create(bool debug)
 	{
 		if (glewInit() != GLEW_OK) {
 			std::cout << "ERROR: Couldnt initialize GLEW" << std::endl;
 		}
-		glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
-		glDebugMessageCallback(GLDebugMessageCallback, NULL);
+        if (debug) {
+            glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
+            glDebugMessageCallback(GLDebugMessageCallback, NULL);
+        }
+		
 	}
 }
 
